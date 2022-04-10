@@ -15,7 +15,7 @@ namespace TestNeuralNetworkLibrary
     {
         public static Gui gui;
         public static NeuralNetwork net;
-        public static (float[][] trainingdata, float[][] traininglabels) getData()
+        public static (float[][] trainingdata, float[][] traininglabels) getData() //READ CSV
         {
             string projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
             IEnumerable<string> lines = File.ReadAllLines(projectPath+"/datasets/mnist_test.csv");
@@ -34,12 +34,9 @@ namespace TestNeuralNetworkLibrary
                 traininglabels[line] = new float[10];
                 traininglabels[line][int.Parse(csv[line][0])] = 1f;
                 trainingdata[line] = Array.ConvertAll(csv[line].Skip(1).ToArray(), element => float.Parse(element) / 255.0f);
-                //csv[line].Skip(1).ToArray()
             }
             return (trainingdata, traininglabels);
         }
-        public static float[][] trainingdata;
-        public static float[][] traininglabels;
         public static void testminst()
         {
             AllocConsole();
@@ -47,17 +44,10 @@ namespace TestNeuralNetworkLibrary
 
             int epochs = 25;
             var data = getData();
-            trainingdata = data.trainingdata;
-            traininglabels = data.traininglabels;
+            float[][] trainingdata = data.trainingdata;
+            float[][] traininglabels = data.traininglabels;
 
-            /*            Console.WriteLine("TRAINING DATA ORIG 0 IS " + (x_train[0]));
-                        Console.WriteLine("TRAINING LABEL ORIG 0 IS " + (y_train[0]));
-
-
-                        Console.WriteLine("TRAINING DATA 0 IS " + str(trainingdata[0]));
-                        Console.WriteLine("TRAINING LABEL 0 IS " + str(traininglabels[0]));
-            */
-            //# network
+            // network
             net = new NeuralNetwork(mse, mse_prime);
             net.add(new CrossConnectedLayer(28 * 28, 100));
             net.add(new FunctionLayer(tanh, tanh_prime));
@@ -69,21 +59,6 @@ namespace TestNeuralNetworkLibrary
             //train
             net.train(trainingdata.Take(1000).ToArray(), traininglabels.Take(1000).ToArray(), epochs, 0.1f);
             startForm();
-            //gui.label1.Text = "0    1    2   3    4   5    6   7    8    9";
-
-            //# test
-            //CreateImage()
-            //Console.WriteLine(str(trainingdata[1000]));
-
-            /*            Random random = new Random();
-                        for (int i = 0; i < 50; i++)
-                        {
-                            int index = (int)Math.Round(random.NextSingle() * (trainingdata.Length - 1));
-                            CreateImage(Make2DArray(trainingdata[index], 28, 28));
-                            float[] output = net.predict(trainingdata[index]);
-                            Console.WriteLine(str(traininglabels[index]));
-                            Console.WriteLine(str(output));
-                        }*/
 
         }
         [STAThread]
@@ -92,8 +67,7 @@ namespace TestNeuralNetworkLibrary
             Application.EnableVisualStyles();
             gui = new Gui();
             gui.InitializeComponent();
-            Application.Run(gui); // or whatever
-            //gui.label1.Text = "Training...";
+            Application.Run(gui); 
 
         }
 
@@ -105,7 +79,7 @@ namespace TestNeuralNetworkLibrary
 
 
 
-
+    //GUI RELATED STUFF
     public class Gui : Form
     {
 
@@ -126,22 +100,6 @@ namespace TestNeuralNetworkLibrary
             {
                 painting = false;
                 showPredictedResults(TestMNIST.net);
-/*                float[] tempthing = TestMNIST.trainingdata[(int)(((new Random().NextDouble()) * TestMNIST.trainingdata.Length) - 1)];
-                using (Graphics g = Graphics.FromImage(pictureBox1.Image))
-                {
-                    for (int i = 0; i < 28; i++)
-                    {
-                        for (int j = 0; j < 28; j++)
-                        {
-                            Color color = Color.FromArgb((int)(tempthing[(j * 28) + i] * 255),
-                                (int)(tempthing[(j * 28) + i] * 255),
-                                (int)(tempthing[(j * 28) + i] * 255));
-                            g.FillRectangle(new SolidBrush(color), new Rectangle(i * 10, j * 10, 10, 10));
-
-                        }
-                    }
-
-                }*/
             }
         }
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
@@ -164,7 +122,6 @@ namespace TestNeuralNetworkLibrary
                     g.FillRectangle(centerBrush, new Rectangle((int)(MathF.Floor(e.X / 10f)-1) * 10, (int)(MathF.Floor(e.Y / 10f)+0) * 10, 10, 10));
                     g.FillRectangle(centerBrush, new Rectangle((int)(MathF.Floor(e.X / 10f)+0) * 10, (int)(MathF.Floor(e.Y / 10f)-1) * 10, 10, 10));
 
-                    //if(((Bitmap)pictureBox1.Image).GetPixel((int)MathF.Floor(e.X / 10f) * 10, (int)MathF.Floor(e.Y / 10f) * 10))
                 }
                 pictureBox1.Image = image;
             }
@@ -191,8 +148,6 @@ namespace TestNeuralNetworkLibrary
         }
         private void showPredictedResults(NeuralNetwork net)
         {
-            /*            using (Bitmap bmp = (Bitmap)pictureBox1.Image)
-                        {*/
             if (net == null) return;
             Bitmap bmp = (Bitmap)pictureBox1.Image;
             float[] input = new float[28 * 28];
@@ -200,19 +155,16 @@ namespace TestNeuralNetworkLibrary
             {
                 for (int j = 0; j < 28; j++)
                 {
-                    Console.WriteLine(bmp.GetPixel(i * 10, j * 10).R);
                     input[(j * 28) + i] = bmp.GetPixel(i * 10, j * 10).R / 255f;
-/*                    if (bmp.GetPixel(i*10, j*10).R == 0) {
-                        input[(j * 28) + i] = 0;
-                    }
-                    else
-                    {
-                        input[(j * 28) + i] = 1;
-                    }*/
                 }
             }
             float[] output = net.predict(input);
-            //Console.WriteLine("new output is " + String.Join(",", output));
+            string printString = "";
+            for(int i = 0; i < 10; i++)
+            {
+                printString += i + ": " + output[i] + "\n";
+            }
+            Console.WriteLine("Predicted "+ printString);
             bar0.Height = (int)(output[0] * 200f);
             bar0.Top = 12 + (200 - (int)(output[0] * 200f));
             bar1.Height = (int)(output[1] * 200f);
