@@ -1,0 +1,97 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "TestNeuralNetworkLibrary/1.0.0": {
+        "dependencies": {
+          "Keras.NET": "3.7.5",
+          "NeuralNetworkLibrary": "1.0.0"
+        },
+        "runtime": {
+          "TestNeuralNetworkLibrary.dll": {}
+        }
+      },
+      "Keras.NET/3.7.5": {
+        "dependencies": {
+          "Numpy.Bare": "3.7.1.25"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Keras.dll": {
+            "assemblyVersion": "3.7.5.0",
+            "fileVersion": "3.7.5.0"
+          }
+        }
+      },
+      "Microsoft.CSharp/4.5.0": {},
+      "Numpy.Bare/3.7.1.25": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "pythonnet_netstandard_py37_win": "2.5.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Numpy.Bare.dll": {
+            "assemblyVersion": "3.7.1.4",
+            "fileVersion": "3.7.1.4"
+          }
+        }
+      },
+      "pythonnet_netstandard_py37_win/2.5.1": {
+        "runtime": {
+          "lib/netstandard2.0/Python.Runtime.dll": {
+            "assemblyVersion": "2.5.1.0",
+            "fileVersion": "2.5.1.0"
+          }
+        }
+      },
+      "NeuralNetworkLibrary/1.0.0": {
+        "runtime": {
+          "NeuralNetworkLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TestNeuralNetworkLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Keras.NET/3.7.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MIAfuLt2nnh3ibBInVL0g4ithSFZrcUvLjUs0h44mgDtR0UbTvoFpAC4NOMsOk8KsrDpc4RVJukFnJcxltAhEA==",
+      "path": "keras.net/3.7.5",
+      "hashPath": "keras.net.3.7.5.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+      "path": "microsoft.csharp/4.5.0",
+      "hashPath": "microsoft.csharp.4.5.0.nupkg.sha512"
+    },
+    "Numpy.Bare/3.7.1.25": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Z1b9imNP05Y331PruuGZ5HV3BTev8DyIePXubsp8qLXE2fYTLgYNzM0IyslldeGFhr2s75UoqjrqA48H4eAXTA==",
+      "path": "numpy.bare/3.7.1.25",
+      "hashPath": "numpy.bare.3.7.1.25.nupkg.sha512"
+    },
+    "pythonnet_netstandard_py37_win/2.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RMsXNGdWfq8eCSmrA/lWXXiB2j8fT/IkXANTtAh7z0jN9ydN5JJQ+EGdAw8g+GvG4WBxEjyv4TUqDERuMN826Q==",
+      "path": "pythonnet_netstandard_py37_win/2.5.1",
+      "hashPath": "pythonnet_netstandard_py37_win.2.5.1.nupkg.sha512"
+    },
+    "NeuralNetworkLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

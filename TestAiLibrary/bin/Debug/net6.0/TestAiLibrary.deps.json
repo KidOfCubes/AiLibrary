@@ -1,0 +1,187 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "TestAiLibrary/1.0.0": {
+        "dependencies": {
+          "AiLibrary": "1.0.0",
+          "Keras.NET": "3.7.5",
+          "System.Drawing.Common": "6.0.0",
+          "System.Numerics.Tensors": "7.0.0-preview.2.22152.2"
+        },
+        "runtime": {
+          "TestAiLibrary.dll": {}
+        }
+      },
+      "Keras.NET/3.7.5": {
+        "dependencies": {
+          "Numpy.Bare": "3.7.1.25"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Keras.dll": {
+            "assemblyVersion": "3.7.5.0",
+            "fileVersion": "3.7.5.0"
+          }
+        }
+      },
+      "Microsoft.CSharp/4.5.0": {},
+      "Microsoft.Win32.SystemEvents/6.0.0": {
+        "runtime": {
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
+          }
+        }
+      },
+      "Numpy.Bare/3.7.1.25": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "pythonnet_netstandard_py37_win": "2.5.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Numpy.Bare.dll": {
+            "assemblyVersion": "3.7.1.4",
+            "fileVersion": "3.7.1.4"
+          }
+        }
+      },
+      "pythonnet_netstandard_py37_win/2.5.1": {
+        "runtime": {
+          "lib/netstandard2.0/Python.Runtime.dll": {
+            "assemblyVersion": "2.5.1.0",
+            "fileVersion": "2.5.1.0"
+          }
+        }
+      },
+      "System.Drawing.Common/6.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/net6.0/System.Drawing.Common.dll": {
+            "rid": "unix",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          },
+          "runtimes/win/lib/net6.0/System.Drawing.Common.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "System.Numerics.Tensors/7.0.0-preview.2.22152.2": {
+        "runtime": {
+          "lib/net6.0/System.Numerics.Tensors.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.15202"
+          }
+        }
+      },
+      "AiLibrary/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "AiLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TestAiLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Keras.NET/3.7.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MIAfuLt2nnh3ibBInVL0g4ithSFZrcUvLjUs0h44mgDtR0UbTvoFpAC4NOMsOk8KsrDpc4RVJukFnJcxltAhEA==",
+      "path": "keras.net/3.7.5",
+      "hashPath": "keras.net.3.7.5.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+      "path": "microsoft.csharp/4.5.0",
+      "hashPath": "microsoft.csharp.4.5.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hqTM5628jSsQiv+HGpiq3WKBl2c8v1KZfby2J6Pr7pEPlK9waPdgEO6b8A/+/xn/yZ9ulv8HuqK71ONy2tg67A==",
+      "path": "microsoft.win32.systemevents/6.0.0",
+      "hashPath": "microsoft.win32.systemevents.6.0.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
+    },
+    "Numpy.Bare/3.7.1.25": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Z1b9imNP05Y331PruuGZ5HV3BTev8DyIePXubsp8qLXE2fYTLgYNzM0IyslldeGFhr2s75UoqjrqA48H4eAXTA==",
+      "path": "numpy.bare/3.7.1.25",
+      "hashPath": "numpy.bare.3.7.1.25.nupkg.sha512"
+    },
+    "pythonnet_netstandard_py37_win/2.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RMsXNGdWfq8eCSmrA/lWXXiB2j8fT/IkXANTtAh7z0jN9ydN5JJQ+EGdAw8g+GvG4WBxEjyv4TUqDERuMN826Q==",
+      "path": "pythonnet_netstandard_py37_win/2.5.1",
+      "hashPath": "pythonnet_netstandard_py37_win.2.5.1.nupkg.sha512"
+    },
+    "System.Drawing.Common/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NfuoKUiP2nUWwKZN6twGqXioIe1zVD0RIj2t976A+czLHr2nY454RwwXs6JU9Htc6mwqL6Dn/nEL3dpVf2jOhg==",
+      "path": "system.drawing.common/6.0.0",
+      "hashPath": "system.drawing.common.6.0.0.nupkg.sha512"
+    },
+    "System.Numerics.Tensors/7.0.0-preview.2.22152.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-liY5xKe3mMRz4LfKgq9/5/KKP3sS62vPp2L/exkE2mtUzoMrOakSt27+/jW9haa+DfhuySwmSQKFX4BfPyZxsw==",
+      "path": "system.numerics.tensors/7.0.0-preview.2.22152.2",
+      "hashPath": "system.numerics.tensors.7.0.0-preview.2.22152.2.nupkg.sha512"
+    },
+    "AiLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
